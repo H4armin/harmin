@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './component/Navbar';
+import Header, { HeroBanner } from './component/HeroBanner';
+import LandingPage from './component/LandingPage';
+import { Routes, Route } from "react-router-dom";
+import NewsCard from './component/NewsCard';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+<Navbar />
+      <Routes>
+        <Route path='/' element = {<><HeroBanner /><LandingPage/></>}></Route>
+        <Route path='/business' element = {<NewsCard category = "business"/>}></Route>
+        <Route path='/entertainment' element = {<NewsCard category = "entertainment"/>}></Route>
+        <Route path='/general' element = {<NewsCard category = "general"/>}></Route>
+        <Route path='/health' element = {<NewsCard category = "health"/>}></Route>
+        <Route path='/science' element = {<NewsCard category = "science"/>}></Route>
+        <Route path='/sports' element = {<NewsCard category = "sports"/>}></Route>
+        <Route path='/technology' element = {<NewsCard category = "technology"/>}></Route>
+      </Routes>
+      {/* <NewsCard pageSize = {10}/> */}
+    </>
   );
 }
 
