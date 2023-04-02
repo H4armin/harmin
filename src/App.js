@@ -19,7 +19,6 @@ function App() {
         <Route path='/sports' element = {<NewsCard category = "sports"/>}></Route>
         <Route path='/technology' element = {<NewsCard category = "technology"/>}></Route>
       </Routes>
-      {/* <NewsCard pageSize = {10}/> */}
     </>
   );
 }
