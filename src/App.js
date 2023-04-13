@@ -4,11 +4,12 @@ import Header, { HeroBanner } from './component/HeroBanner';
 import LandingPage from './component/LandingPage';
 import { Routes, Route } from "react-router-dom";
 import NewsCard from './component/NewsCard';
+import Footer from './component/Footer';
 
 function App() {
   return (
     <>
-<Navbar />
+      <Navbar />
       <Routes>
         <Route path='/' element = {<><HeroBanner /><LandingPage/></>}></Route>
         <Route path='/business' element = {<NewsCard category = "business"/>}></Route>
@@ -19,6 +20,7 @@ function App() {
         <Route path='/sports' element = {<NewsCard category = "sports"/>}></Route>
         <Route path='/technology' element = {<NewsCard category = "technology"/>}></Route>
       </Routes>
+      <Footer/>
     </>
   );
 }
